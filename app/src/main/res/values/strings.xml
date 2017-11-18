@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Run</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="to_login">to login</string>
+    <string name="to_register">to register</string>
+    <string name="add_friend">add friend</string>
+    <string name="challenge">challenge</string>
+    <string name="info">info</string>
+</resources>
