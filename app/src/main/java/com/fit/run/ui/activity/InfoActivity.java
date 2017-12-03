@@ -9,9 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.fit.run.Config;
 import com.fit.run.R;
+import com.fit.run.pedometer.pojo.StepData;
 import com.fit.run.ui.base.BaseActivity;
+import com.fit.run.utils.DbUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,7 +25,6 @@ import butterknife.OnClick;
 /**
  * Created on 17/11/13 14:22
  *
- * @author
  */
 
 public class InfoActivity extends BaseActivity {
@@ -34,6 +38,10 @@ public class InfoActivity extends BaseActivity {
     Button mBtnChallenge;
     @BindView(R.id.tv_step)
     TextView mTvStep;
+    @BindView(R.id.tv_lover)
+    TextView mTvLover;
+    @BindView(R.id.tv_integral)
+    TextView mTvIntegral;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,9 +51,22 @@ public class InfoActivity extends BaseActivity {
         mToolbar.setSubtitleTextColor(ContextCompat.getColor(mContext, android.R.color.white));
         //TODO judge is friend or not
         Intent intent = getIntent();
-        mTvAccount.setText(intent.getStringExtra(Config.ACCOUNT));
+        mTvAccount.setText("Account: " + intent.getStringExtra(Config.ACCOUNT));
+        mTvLover.setText("Interest: " + intent.getStringExtra(Config.LOVER));
+        mTvIntegral.setText("Total integral: " + intent.getIntExtra(Config.INTEGRAL, 0));
 
-        mTvStep.setText("1000 step");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        List<StepData> list = DbUtils.getQueryByWhere(StepData.class, "today", new String[]{getTodayDate()});
+        if (list == null || list.size() == 0) {
+            mTvStep.setText("Today's step: " + 0);
+        } else {
+            mTvStep.setText("Today's step: " + list.get(0).getStep());
+        }
     }
 
 
@@ -61,5 +82,11 @@ public class InfoActivity extends BaseActivity {
             default:
                 break;
         }
+    }
+
+    private String getTodayDate() {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
     }
 }

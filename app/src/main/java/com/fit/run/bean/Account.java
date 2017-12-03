@@ -2,12 +2,18 @@ package com.fit.run.bean;
 
 /**
  * Created on 17/11/13 14:51
+ *
+ *
  */
 
 public class Account {
     private String account;
 
     private boolean isFriend;
+
+    private String lover;
+
+    private Integer integral;
 
     public String getAccount() {
         return account;
@@ -26,4 +32,19 @@ public class Account {
     }
 
 
+    public String getLover() {
+        return lover;
+    }
+
+    public void setLover(String lover) {
+        this.lover = lover;
+    }
+
+    public Integer getIntegral() {
+        return integral;
+    }
+
+    public void setIntegral(Integer integral) {
+        this.integral = integral;
+    }
 }

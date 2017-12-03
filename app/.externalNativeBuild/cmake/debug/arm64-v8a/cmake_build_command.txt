@@ -1,15 +1,15 @@
-Executable : /Users/Ran/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
+Executable : /Users/jiahuayou/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
 arguments : 
--H/Users/Ran/Desktop/121/app
--B/Users/Ran/Desktop/121/app/.externalNativeBuild/cmake/debug/arm64-v8a
--GAndroid Gradle - Ninja
+-H/Users/jiahuayou/Desktop/121/app
+-B/Users/jiahuayou/Desktop/121/app/.externalNativeBuild/cmake/debug/arm64-v8a
 -DANDROID_ABI=arm64-v8a
--DANDROID_NDK=/Users/Ran/Library/Android/sdk/ndk-bundle
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/Ran/Desktop/121/app/build/intermediates/cmake/debug/obj/arm64-v8a
--DCMAKE_BUILD_TYPE=Debug
--DCMAKE_MAKE_PROGRAM=/Users/Ran/Library/Android/sdk/cmake/3.6.4111459/bin/ninja
--DCMAKE_TOOLCHAIN_FILE=/Users/Ran/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake
 -DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/jiahuayou/Desktop/121/app/build/intermediates/cmake/debug/obj/arm64-v8a
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=/Users/jiahuayou/Library/Android/sdk/ndk-bundle
 -DCMAKE_CXX_FLAGS=
+-DCMAKE_TOOLCHAIN_FILE=/Users/jiahuayou/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/jiahuayou/Library/Android/sdk/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
 jvmArgs : 
 

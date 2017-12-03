@@ -23,7 +23,6 @@ import butterknife.Unbinder;
 
 /**
  * Created on 17/11/13 14:47
- * @author
  */
 
 public class RankFragment extends BaseFragment {
@@ -48,6 +47,8 @@ public class RankFragment extends BaseFragment {
         Account account = new Account();
         account.setAccount("Test Account");
         account.setFriend(true);
+        account.setLover("yoga lover");
+        account.setIntegral(999);
         Rank rank = new Rank();
         rank.setAccount(account);
         rank.setStep(1000L);

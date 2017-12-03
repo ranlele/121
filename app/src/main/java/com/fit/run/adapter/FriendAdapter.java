@@ -1,5 +1,6 @@
 package com.fit.run.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.fit.run.Config;
 import com.fit.run.R;
-import com.fit.run.bean.Account;
 import com.fit.run.ui.activity.InfoActivity;
 
 import java.util.List;
@@ -42,12 +41,18 @@ public class FriendAdapter extends RecyclerView.Adapter {
 
         FriendHolder friendHolder = (FriendHolder) holder;
 
-        friendHolder.mTvAccount.setText(mAccounts.get(position).getAccount());
+        final Context context = holder.itemView.getContext();
+        final Account account = mAccounts.get(position);
+        friendHolder.mTvAccount.setText("Account: " + account.getAccount());
+        friendHolder.mTvLover.setText("Interest: " + account.getLover());
+        friendHolder.mTvIntegral.setText("Total integral: " + account.getIntegral() );
         friendHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.itemView.getContext().startActivity(new Intent(holder.itemView.getContext(), InfoActivity.class).
-                        putExtra(Config.ACCOUNT, mAccounts.get(position).getAccount()));
+                context.startActivity(new Intent(context, InfoActivity.class).
+                        putExtra(Config.ACCOUNT, account.getAccount())
+                        .putExtra(Config.LOVER, account.getLover())
+                        .putExtra(Config.INTEGRAL,account.getIntegral()));
             }
         });
 
@@ -62,6 +67,10 @@ public class FriendAdapter extends RecyclerView.Adapter {
     class FriendHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_account)
         TextView mTvAccount;
+        @BindView(R.id.tv_lover)
+        TextView mTvLover;
+        @BindView(R.id.tv_integral)
+        TextView mTvIntegral;
 
         public FriendHolder(View itemView) {
             super(itemView);

@@ -1,5 +1,6 @@
 package com.fit.run.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.fit.run.Config;
 import com.fit.run.R;
-import com.fit.run.bean.Rank;
 import com.fit.run.ui.activity.InfoActivity;
 
 import java.util.List;
@@ -41,14 +40,20 @@ public class RankAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
         RankHolder rankHolder = (RankHolder) holder;
-
-        rankHolder.mTvAccount.setText(mRanks.get(position).getAccount().getAccount());
-        rankHolder.mTvStep.setText(mRanks.get(position).getStep() + " step");
+        final Context context = holder.itemView.getContext();
+        final Rank rank = mRanks.get(position);
+        final Account account = rank.getAccount();
+        rankHolder.mTvAccount.setText("Account: " + account.getAccount());
+        rankHolder.mTvLover.setText("Interest: " + account.getLover());
+        rankHolder.mTvStep.setText("Today's step: " + account.getIntegral());
         rankHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.itemView.getContext().startActivity(new Intent(holder.itemView.getContext(), InfoActivity.class).
-                        putExtra(Config.ACCOUNT, mRanks.get(position).getAccount().getAccount()));
+                context.startActivity(new Intent(context, InfoActivity.class).
+                        putExtra(Config.ACCOUNT, account.getAccount())
+                        .putExtra(Config.LOVER, account.getLover())
+                        .putExtra(Config.STEP, rank.getStep())
+                        .putExtra(Config.INTEGRAL,account.getIntegral()));
             }
         });
 
@@ -63,6 +68,8 @@ public class RankAdapter extends RecyclerView.Adapter {
     class RankHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_account)
         TextView mTvAccount;
+        @BindView(R.id.tv_lover)
+        TextView mTvLover;
         @BindView(R.id.tv_step)
         TextView mTvStep;
 

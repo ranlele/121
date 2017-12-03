@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 
-import com.fit.run.MainActivity;
 import com.fit.run.R;
 import com.fit.run.ui.base.BaseActivity;
 
@@ -20,7 +21,6 @@ import butterknife.OnClick;
 /**
  * Created on 17/11/13 11:53
  *
- * @author
  */
 
 public class RegisterActivity extends BaseActivity {
@@ -32,6 +32,10 @@ public class RegisterActivity extends BaseActivity {
     EditText mEdtPassword;
     @BindView(R.id.edt_repeat)
     EditText mEdtRepeat;
+    @BindView(R.id.acs_lover)
+    AppCompatSpinner mAcsLover;
+    private String[] lovers = new String[]{"yoga lover", "cardio lover", "muscle lover"};
+    private String lover = lovers[0];
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +43,17 @@ public class RegisterActivity extends BaseActivity {
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         mToolbar.setSubtitleTextColor(ContextCompat.getColor(mContext, android.R.color.white));
+        mAcsLover.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                lover = lovers[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
 
@@ -67,10 +82,16 @@ public class RegisterActivity extends BaseActivity {
                     return;
                 }
 
+                if (TextUtils.isEmpty(lover)) {
+                    toast("please select lover");
+                    return;
+                }
+
                 //TODO judge account password and repeat password
 
                 startActivity(new Intent(mContext, MainActivity.class));
 
+                finish();
                 break;
             case R.id.btn_to_login:
                 startActivity(new Intent(mContext, LoginActivity.class));

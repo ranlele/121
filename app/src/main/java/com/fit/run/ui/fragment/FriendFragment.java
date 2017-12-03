@@ -23,7 +23,6 @@ import butterknife.Unbinder;
 /**
  * Created on 17/11/13 14:47
  *
- * @author
  */
 
 public class FriendFragment extends BaseFragment {
@@ -51,6 +50,8 @@ public class FriendFragment extends BaseFragment {
         mRvFriend.setLayoutManager(new LinearLayoutManager(getContext()));
         Account account = new Account();
         account.setAccount("Test Account");
+        account.setLover("yoga lover");
+        account.setIntegral(999);
         account.setFriend(true);
         mAccounts.add(account);
         mAccounts.add(account);

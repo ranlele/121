@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
-import com.fit.run.MainActivity;
 import com.fit.run.R;
 import com.fit.run.ui.base.BaseActivity;
 
@@ -20,7 +19,6 @@ import butterknife.OnClick;
 /**
  * Created on 17/11/13 11:50
  *
- * @author
  */
 
 public class LoginActivity extends BaseActivity {
@@ -62,7 +60,7 @@ public class LoginActivity extends BaseActivity {
                 //TODO judge account and password
 
                 startActivity(new Intent(mContext, MainActivity.class));
-
+                finish();
 
                 break;
             case R.id.btn_to_register:
