@@ -13,11 +13,7 @@ import com.fit.run.utils.CountDownTimer;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- *
- * @author
- * @date 2016/8/17
- */
+
 public class StepInAcceleration extends StepMode {
     private final String TAG = "StepInAcceleration";
     //存放三轴数据
@@ -93,9 +89,11 @@ public class StepInAcceleration extends StepMode {
         }
     }
 
+    @Override
     public void onAccuracyChanged(Sensor arg0, int arg1) {
     }
 
+    @Override
     public void onSensorChanged(SensorEvent event) {
         Sensor sensor = event.sensor;
         synchronized (this) {

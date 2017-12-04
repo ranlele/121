@@ -3,37 +3,41 @@
     package="com.fit.run">
 
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application
+        android:name=".RunApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".widget.RunApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".widget.MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
 
         </activity>
 
         <activity
+
             android:name=".ui.activity.RegisterActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             ></activity>
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -43,8 +47,11 @@
 
         </activity>
 
-        <activity android:name=".ui.activity.InfoActivity"></activity>
+        <activity
+            android:name=".ui.activity.InfoActivity"
 
+            android:screenOrientation="portrait"
+            ></activity>
 
 
         <service
@@ -52,39 +59,39 @@
             android:priority="1000"
             android:process=":process1">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.DATE_CHANGED" />
-                <action android:name="android.intent.action.MEDIA_MOUNTED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.intent.action.ACTION_TIME_TICK" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.ACTION_TIME_TICK"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
             </intent-filter>
         </service>
-        <uses-feature android:name="android.hardware.sensor.accelerometer" />
+        <uses-feature android:name="android.hardware.sensor.accelerometer"/>
 
-        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
         <receiver android:name=".pedometer.service.BootCompleteReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
 
         <receiver
             android:name=".pedometer.receiver.Receiver1"
-            android:process=":process1" />
+            android:process=":process1"/>
 
         <service
             android:name=".pedometer.service.DaemonService"
-            android:process=":process2" />
+            android:process=":process2"/>
         <receiver
             android:name=".pedometer.receiver.Receiver2"
-            android:process=":process2" />
+            android:process=":process2"/>
 
     </application>
 

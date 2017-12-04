@@ -17,18 +17,23 @@
 
     <EditText
         android:id="@+id/edt_account"
+        android:singleLine="true"
+        android:text="abcdefgh@ijk.com"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:background="@drawable/shape_edt"
-        android:hint="input account"
+        android:hint="input email"
         android:paddingLeft="16dp"/>
 
 
     <EditText
         android:id="@+id/edt_password"
         android:layout_width="match_parent"
+        android:inputType="textPassword"
         android:layout_height="48dp"
+        android:singleLine="true"
+        android:text="111111"
         android:layout_margin="16dp"
         android:background="@drawable/shape_edt"
         android:hint="input password"

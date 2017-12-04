@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/Ran/Desktop/121/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/Ran/Desktop/git/121/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2d2154d50d9a25be8ea3acddb4a323674d110597">
+        <dex dex="/Users/Ran/Desktop/git/121/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_af10aa3f4ad0e5613e45be12be1c9e4c449c08d0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Ran/Desktop/git/121/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/Ran/Desktop/121/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0f74d00984bff0d7bd8d8807869c8ebfc9263ee7/classes.dex" />
+        <dex dex="/Users/Ran/Desktop/git/121/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_dd10023353791807701ed795dc60309a13b80d2b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Ran/Desktop/121/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/Ran/Desktop/git/121/app/libs/lite-orm-1.7.0.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="cf8a373c33ed1e496367b6410357cc5d20081ef9">
-        <dex dex="/Users/Ran/Desktop/121/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7501a1912cdd0f39e8551dfe721ea21c7ace8e44/classes.dex" />
+        sha1="bf59a1eca660fa671d66922676c035846c94e5d5">
+        <dex dex="/Users/Ran/Desktop/git/121/app/build/intermediates/transforms/dex/debug/folders/1000/2/lite-orm-1.7.0_9d84db36b79371016c5a0ce6af0275891dac1f84/classes.dex" />
     </item>
 
 </items>

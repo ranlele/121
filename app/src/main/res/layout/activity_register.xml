@@ -20,14 +20,20 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+
+        android:singleLine="true"
+        android:text="abcdefgh@ijk.com"
         android:background="@drawable/shape_edt"
-        android:hint="input account"
+        android:hint="input email"
         android:paddingLeft="16dp"/>
 
 
     <EditText
         android:id="@+id/edt_password"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
+        android:singleLine="true"
+        android:text="111111"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:background="@drawable/shape_edt"
@@ -36,12 +42,25 @@
 
     <EditText
         android:id="@+id/edt_repeat"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:singleLine="true"
+        android:text="111111"
         android:layout_margin="16dp"
         android:background="@drawable/shape_edt"
         android:hint="repeat password"
         android:paddingLeft="16dp"/>
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/acs_lover"
+        android:layout_margin="16dp"
+        android:entries="@array/lover"
+        android:spinnerMode="dialog">
+
+    </android.support.v7.widget.AppCompatSpinner>
 
     <Button
         android:id="@+id/btn_register"
@@ -51,6 +70,7 @@
         android:background="@drawable/shape_btn"
         android:text="@string/register"
         android:textColor="@android:color/white"/>
+
     <Button
         android:id="@+id/btn_to_login"
         android:layout_width="match_parent"

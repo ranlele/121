@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "343163238188",
+    "firebase_url": "https://fitrun-7d29d.firebaseio.com",
+    "project_id": "fitrun-7d29d",
+    "storage_bucket": "fitrun-7d29d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343163238188:android:7caceab69c889a73",
+        "android_client_info": {
+          "package_name": "com.fit.run"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343163238188-bbrsufsk0uoqqrfnusmiltrasnjsqoiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fit.run",
+            "certificate_hash": "d7871e06be18ba353f28d8fc537d827512cbae8a"
+          }
+        },
+        {
+          "client_id": "343163238188-nju95onhbt2migdk3nqaj1jbm3ln6ioo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVD9n9Kw9mxerhYnvEB9B4t-tkqDN-bfM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343163238188-nju95onhbt2migdk3nqaj1jbm3ln6ioo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

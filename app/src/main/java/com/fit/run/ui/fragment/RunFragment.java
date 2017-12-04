@@ -6,8 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fit.run.Config;
 import com.fit.run.R;
-import com.fit.run.event.RefreshStepEvent;
+import com.fit.run.bean.RefreshStepEvent;
 import com.fit.run.ui.base.BaseFragment;
 import com.fit.run.widget.StepArcView;
 
@@ -17,7 +18,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
 
 
 public class RunFragment extends BaseFragment {

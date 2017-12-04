@@ -1,26 +1,59 @@
 package com.fit.run.bean;
 
-/**
- * Created on 17/11/13 14:51
- */
+import com.google.firebase.database.IgnoreExtraProperties;
 
+
+@IgnoreExtraProperties
 public class Rank {
-    private Long step;
-    private Account account;
+    private String account;
 
-    public Long getStep() {
-        return step;
-    }
+    private String lover;
 
-    public void setStep(Long step) {
-        this.step = step;
-    }
+    private int point;
 
-    public Account getAccount() {
+    private int step;
+    private String uid;
+
+
+    public String getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(String account) {
         this.account = account;
+    }
+
+    public String getLover() {
+        return lover;
+    }
+
+    public void setLover(String lover) {
+        this.lover = lover;
+    }
+
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public int getStep() {
+        return step;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
+
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

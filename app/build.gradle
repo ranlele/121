@@ -7,13 +7,17 @@ android {
         applicationId "com.fit.run"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 cppFlags ""
             }
+        }
+
+        ndk {
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
     }
     buildTypes {
@@ -26,6 +30,10 @@ android {
         cmake {
             path "CMakeLists.txt"
         }
+    }
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -41,4 +49,13 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.ss.bottomnavigation:bottomnavigation:1.5.2'
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile project(path: ':LibMarsdaemon')
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.google.firebase:firebase-core:11.0.4'
+    compile 'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.google.firebase:firebase-storage:11.0.4'
+    compile 'com.google.firebase:firebase-auth:11.0.4'
 }
+apply plugin: 'com.google.gms.google-services'
+

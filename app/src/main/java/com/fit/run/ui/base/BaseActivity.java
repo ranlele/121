@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 /**
  * Created on 17/11/13 11:50
- *
  */
 
 public class BaseActivity extends AppCompatActivity {
@@ -21,8 +20,13 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * toast msg
+     *
+     * @param msg
+     */
     public void toast(String msg) {
         Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
     }
 }
+

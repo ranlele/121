@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.fit.run.Config;
 import com.fit.run.R;
+import com.fit.run.bean.Rank;
 import com.fit.run.ui.activity.InfoActivity;
 
 import java.util.List;
@@ -16,9 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created on 17/11/13 15:52
- */
+
 
 public class RankAdapter extends RecyclerView.Adapter {
 
@@ -42,18 +42,18 @@ public class RankAdapter extends RecyclerView.Adapter {
         RankHolder rankHolder = (RankHolder) holder;
         final Context context = holder.itemView.getContext();
         final Rank rank = mRanks.get(position);
-        final Account account = rank.getAccount();
-        rankHolder.mTvAccount.setText("Account: " + account.getAccount());
-        rankHolder.mTvLover.setText("Interest: " + account.getLover());
-        rankHolder.mTvStep.setText("Today's step: " + account.getIntegral());
+        rankHolder.mTvAccount.setText("User: " + rank.getAccount());
+        rankHolder.mTvLover.setText("Interest: " + rank.getLover());
+        rankHolder.mTvStep.setText("Today's step: " + rank.getStep());
         rankHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 context.startActivity(new Intent(context, InfoActivity.class).
-                        putExtra(Config.ACCOUNT, account.getAccount())
-                        .putExtra(Config.LOVER, account.getLover())
+                        putExtra(Config.ACCOUNT, rank.getAccount())
+                        .putExtra(Config.LOVER, rank.getLover())
                         .putExtra(Config.STEP, rank.getStep())
-                        .putExtra(Config.INTEGRAL,account.getIntegral()));
+                        .putExtra(Config.UID,rank.getUid())
+                        .putExtra(Config.POINT, rank.getPoint()));
             }
         });
 

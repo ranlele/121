@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:subtitleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
         app:subtitle="@string/info">
     </android.support.v7.widget.Toolbar>
 
@@ -20,7 +21,25 @@
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:gravity="center_vertical"
-        android:text="account"/>
+        android:text="user"/>
+
+    <TextView
+        android:id="@+id/tv_lover"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:text="lover"/>
+
+
+    <TextView
+        android:id="@+id/tv_point"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:text="point"/>
+
     <TextView
         android:id="@+id/tv_step"
         android:layout_width="match_parent"
@@ -32,6 +51,7 @@
     <Button
         android:id="@+id/btn_add_friend"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:background="@drawable/shape_btn"
@@ -39,14 +59,28 @@
         android:textColor="@android:color/white"/>
 
 
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/acs_challenge"
+        android:visibility="gone"
+        android:layout_margin="16dp"
+        android:entries="@array/point"
+        android:spinnerMode="dialog">
+
+    </android.support.v7.widget.AppCompatSpinner>
     <Button
         android:id="@+id/btn_challenge"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="48dp"
         android:layout_margin="16dp"
         android:background="@drawable/shape_btn"
         android:text="@string/challenge"
         android:textColor="@android:color/white"/>
+
+
 
 
 </LinearLayout>

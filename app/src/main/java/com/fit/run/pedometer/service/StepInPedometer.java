@@ -9,9 +9,7 @@ import android.util.Log;
 import com.fit.run.pedometer.StepMode;
 import com.fit.run.pedometer.callback.StepCallBack;
 
-/**
- * Created by base on 2016/8/17.
- */
+
 public class StepInPedometer extends StepMode {
     private final String TAG = "StepInPedometer";
     private int lastStep = -1;
